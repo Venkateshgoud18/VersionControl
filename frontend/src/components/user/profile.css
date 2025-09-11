@@ -1,0 +1,40 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #24292e; /* GitHub dark header */
+    padding: 10px 20px;
+    position: sticky; /* stays on top while scrolling */
+    top: 0;
+    z-index: 1000;
+  }
+  
+  nav .logo {
+    width: 32px;
+    height: 32px;
+    margin-right: 10px;
+  }
+  
+  nav div {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  nav h3 {
+    color: white;
+    font-size: 20px;
+    margin: 0;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: #f5f5f5;
+    font-weight: 500;
+    transition: color 0.2s ease;
+  }
+  
+  nav a:hover {
+    color: #58a6ff; /* GitHub blue hover */
+  }
+  

@@ -1,0 +1,144 @@
+/* Root dashboard layout */
+#dashboard {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr; /* sidebar - main - sidebar */
+    gap: 20px;
+    padding: 20px;
+    background-color: #f6f8fa; /* GitHub’s light gray */
+    min-height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    color: #24292f;
+  }
+  
+  /* Sidebars + main content as cards */
+  #dashboard aside,
+  #dashboard main {
+    background: #fff;
+    border: 1px solid #d0d7de;
+    border-radius: 6px;
+    padding: 16px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+  }
+  
+  /* Headings */
+  #dashboard h2 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    border-bottom: 1px solid #d0d7de;
+    padding-bottom: 8px;
+  }
+  
+  /* Repo item styling */
+  #dashboard div {
+    margin-bottom: 12px;
+    padding: 12px;
+    border: 1px solid #d0d7de;
+    border-radius: 6px;
+    transition: background 0.2s;
+  }
+  
+  #dashboard div:hover {
+    background: #f6f8fa;
+  }
+  
+  #dashboard h3 {
+    font-size: 14px;
+    margin: 0 0 6px;
+    color: #0969da; /* GitHub link blue */
+  }
+  
+  #dashboard p {
+    font-size: 13px;
+    color: #57606a;
+    margin: 0;
+  }
+  
+  /* Buttons (GitHub-style) */
+  .btn {
+    background-color: #f6f8fa;
+    border: 1px solid #d0d7de;
+    border-radius: 6px;
+    padding: 5px 12px;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  
+  .btn:hover {
+    background-color: #f3f4f6;
+  }
+  
+  /* Search box */
+  .search-box input {
+    width: 100%;
+    padding: 6px 12px;
+    font-size: 14px;
+    border: 1px solid #d0d7de;
+    border-radius: 6px;
+    margin-bottom: 16px;
+    outline: none;
+  }
+  
+  .search-box input:focus {
+    border-color: #0969da;
+    box-shadow: 0 0 0 2px rgba(9,105,218,0.2);
+  }
+
+  /* Upcoming Events – container */
+.upcoming {
+    background: #fff;
+    border: 1px solid #d0d7de;
+    border-radius: 6px;
+    padding: 16px;
+  }
+  
+  /* Viewport for the scrolling list */
+  .events-scroller {
+    position: relative;
+    height: 180px;          /* adjust as you like */
+    overflow: hidden;
+    mask-image: linear-gradient(to bottom, transparent 0, black 16px, black calc(100% - 16px), transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0, black 16px, black calc(100% - 16px), transparent 100%);
+  }
+  
+  /* The list that moves upward */
+  .events-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  
+    /* Animation */
+    animation: scroll-up 12s linear infinite;
+  }
+  
+  /* Pause on hover (nice UX) */
+  .events-scroller:hover .events-list {
+    animation-play-state: paused;
+  }
+  
+  /* Each item styling */
+  .events-list li {
+    border: 1px solid #d0d7de;
+    border-radius: 6px;
+    padding: 8px 10px;
+    background: #f6f8fa;
+  }
+  
+  /* Keyframes:
+     Because we duplicated items, we only need to move by 50% for a seamless loop. */
+  @keyframes scroll-up {
+    0%   { transform: translateY(0); }
+    100% { transform: translateY(-50%); }
+  }
+  
+  /* Respect reduced motion preferences */
+  @media (prefers-reduced-motion: reduce) {
+    .events-list { animation: none; }
+  }
+  
+  
